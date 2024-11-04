@@ -11,75 +11,74 @@
 &mt { tapping-term-ms = <200>; };
 
 / {
+    combos {
+        compatible = "zmk,combos";
 
-combos {
-    compatible = "zmk,combos";
-
-    leftPare {
-        bindings = <&kp LEFT_SHIFT>;
-        key-positions = <16 15>;
-        layers = <0>;
-    };
-
-    rightPare {
-        bindings = <&kp RIGHT_SHIFT>;
-        key-positions = <19 20>;
-        layers = <0>;
-    };
-};
-
-keymap {
-                compatible = "zmk,keymap";
-
-                // --------------------------------------------------------------
-                // https://keymap-drawer.streamlit.app/ om een plaatje te hebben.
-                // --------------------------------------------------------------
-
-                default_layer {
-                        bindings = <
-&trans    &kp Q      	   &kp W              &kp E             &kp R             &kp T                 &kp Y             &kp U             &kp I             &kp O              &kp P             &trans
-&trans    &kp A        	   &kp S              &kp D             &kp F             &kp G                 &kp H             &kp J             &kp K             &kp L              &kp SEMI          &trans
-&trans    &kp Z       	   &kp X              &kp C             &kp V             &kp B                 &kp N             &kp M             &kp COMMA         &kp PERIOD         &kp FSLH          &trans
-                                          &mt LCTRL TAB   &mt LEFT_SHIFT BSPC     &lt 1 BSPC           &lt 2 RET         &kp SPACE        &mt RIGHT_ALT DEL                                         
-                        >;
-                };
-                lower_layer {
-                        bindings = <
-&trans    &none   	     &none             &none            &none            &none                    &none             &kp N7            &kp N8            &kp N9            &kp MINUS          &trans
-&trans    &none    	     &kp KP_DOT        &none            &none            &none                    &none             &kp N4            &kp N5            &kp N6            &kp PLUS           &trans
-&trans    &kp ESCAPE	 &kp KP_N7         &kp KP_N1        &kp KP_N3        &none                    &kp N0            &kp N1            &kp N2            &kp N3            &kp EQUAL          &trans
-                                           &trans             &trans            &trans                &trans            &trans            &trans                                                 
-                        >;
-                };
-                raise_layer {
-                        bindings = <
-&trans    &kp AMPS         &kp ASTRK         &kp LPAR           &kp RPAR          &kp APOS              &kp GRAVE         &none               &kp UP            &none              &none           &trans
-&trans    &kp DLLR         &kp PRCNT         &kp CARET          &kp SEMI          &kp LBKT              &none             &kp LEFT            &kp DOWN          &kp RIGHT          &none           &trans
-&trans    &kp EXCL         &kp AT            &kp HASH           &kp BSLH          &kp RBKT              &kp UNDER         &none               &none             &none              &none           &trans
-                                             &trans             &trans            &trans                &trans            &trans             &trans                                                 
-                        >;
-                };
-
-                adjust_layer {
-                        bindings = <
-
-&trans  &none            &kp F1           &kp F2              &kp F3            &kp F4                  &kp F9            &kp F10           &kp F11          &kp F12             &none             &trans
-&trans  &kp LGUI         &kp LCTRL        &kp LALT            &kp LSHFT         &kp F5                  &kp F8            &kp RSHFT         &kp RALT         &kp RCTRL           &kp RGUI          &trans
-&trans  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2        &bt BT_CLR        &kp F6                  &kp F7            &none             &none            &none               &none             &trans
-                                          &trans             &trans            &trans                &trans            &trans            &trans                                                
-                        >;
-                };
+        leftPare {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <16 15>;
+            layers = <0>;
         };
 
-conditional_layers {
-    compatible = "zmk,conditional-layers";
-
-    derdeLaag {
-        if-layers = <1 2>;
-        then-layer = <3>;
+        rightPare {
+            bindings = <&kp RIGHT_SHIFT>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
     };
-};
 
+    keymap {
+        compatible = "zmk,keymap";
+
+        // --------------------------------------------------------------
+        // https://keymap-drawer.streamlit.app/ om een plaatje te hebben.
+        // --------------------------------------------------------------
+
+        default_layer {
+            bindings = <
+&trans  &kp Q  &kp W  &kp E          &kp R                 &kp T         &kp Y      &kp U      &kp I              &kp O       &kp P     &trans
+&trans  &kp A  &kp S  &kp D          &kp F                 &kp G         &kp H      &kp J      &kp K              &kp L       &kp SEMI  &trans
+&trans  &kp Z  &kp X  &kp C          &kp V                 &kp B         &kp N      &kp M      &kp COMMA          &kp PERIOD  &kp FSLH  &trans
+                      &mt LCTRL TAB  &mt LEFT_SHIFT SPACE  &lt 1 BSPC    &lt 2 RET  &kp SPACE  &mt RIGHT_ALT DEL
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+&trans  &none       &none       &none      &none      &none     &none   &kp N7  &kp N8  &kp N9  &kp MINUS  &trans
+&trans  &none       &kp KP_DOT  &none      &none      &none     &none   &kp N4  &kp N5  &kp N6  &kp PLUS   &trans
+&trans  &kp ESCAPE  &kp KP_N7   &kp KP_N1  &kp KP_N3  &none     &kp N0  &kp N1  &kp N2  &kp N3  &kp EQUAL  &trans
+                                &trans     &trans     &trans    &trans  &trans  &trans
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+&trans  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp APOS    &kp GRAVE  &none     &kp UP    &none      &none  &trans
+&trans  &kp DLLR  &kp PRCNT  &kp CARET  &kp SEMI  &kp LBKT    &none      &kp LEFT  &kp DOWN  &kp RIGHT  &none  &trans
+&trans  &kp EXCL  &kp AT     &kp HASH   &kp BSLH  &kp RBKT    &kp UNDER  &none     &none     &none      &none  &trans
+                             &trans     &trans    &trans      &trans     &trans    &trans
+            >;
+        };
+
+        adjust_layer {
+            bindings = <
+&trans  &none         &kp F1        &kp F2        &kp F3      &kp F4    &kp F9  &kp F10    &kp F11   &kp F12    &none     &trans
+&trans  &kp LGUI      &kp LCTRL     &kp LALT      &kp LSHFT   &kp F5    &kp F8  &kp RSHFT  &kp RALT  &kp RCTRL  &kp RGUI  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &kp F6    &kp F7  &none      &none     &none      &none     &trans
+                                    &trans        &trans      &trans    &trans  &trans     &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        derdeLaag {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
 };
 
 // Dit is een fix van https://www.reddit.com/r/ErgoMechKeyboards/comments/yisksy/comment/j4qu9h0/
