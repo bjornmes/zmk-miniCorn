@@ -63,10 +63,10 @@
 
         adjust_layer {
             bindings = <
-&trans  &none         &kp F1        &kp F2        &kp F3      &kp F4    &kp F9  &kp F10  &kp F11  &kp F12  &none            &trans
-&trans  &kp LGUI      &trans        &trans        &trans      &kp F5    &kp F8  &trans   &trans   &trans   &kp RGUI         &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &kp F6    &kp F7  &none    &none    &none    &kp LC(LA(DEL))  &trans
-                                    &trans        &trans      &trans    &trans  &trans   &trans
+&trans  &none         &kp F1        &kp F2        &kp F3          &kp F4    &kp F9  &kp F10  &kp F11  &kp F12  &none            &trans
+&trans  &kp LGUI      &trans        &trans        &bt BT_CLR_ALL  &kp F5    &kp F8  &trans   &trans   &trans   &kp RGUI         &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR      &kp F6    &kp F7  &none    &none    &none    &kp LC(LA(DEL))  &trans
+                                    &trans        &trans          &trans    &trans  &trans   &trans
             >;
         };
     };
